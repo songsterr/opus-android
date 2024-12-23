@@ -35,11 +35,7 @@ LOCAL_CFLAGS        += -falign-functions=16384
 LOCAL_LDFLAGS       += -z max-page-size=16384
 LOCAL_ALIGNMENT     := 16384
 
-include $(BUILD_STATIC_LIBRARY)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE    := opus-share
-#LOCAL_SRC_FILES := libopus.a
-LOCAL_STATIC_LIBRARIES := opus
 include $(BUILD_SHARED_LIBRARY)
 
+include $(CLEAR_VARS)

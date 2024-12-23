@@ -31,6 +31,9 @@ LOCAL_CFLAGS        := -DNULL=0 -DSOCKLEN_T=socklen_t -DLOCALE_NOT_USED -D_LARGE
 LOCAL_CFLAGS        += -Drestrict='' -D__EMX__ -DOPUS_BUILD -DFIXED_POINT=1 -DDISABLE_FLOAT_API -DUSE_ALLOCA -DHAVE_LRINT -DHAVE_LRINTF -O3 -fno-math-errno
 LOCAL_CPPFLAGS      := -DBSD=1
 LOCAL_CPPFLAGS      += -ffast-math -O3 -funroll-loops
+LOCAL_CFLAGS        += -falign-functions=16384
+LOCAL_LDFLAGS       += -z max-page-size=16384
+LOCAL_ALIGNMENT     := 16384
 
 include $(BUILD_STATIC_LIBRARY)
 
